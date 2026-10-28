@@ -1,0 +1,23 @@
+## Food Delivery Customer Analysis
+
+Prerequisites-:
+
+>> Python
+>> SQL 
+>> Statistics
+
+
+Data Collection
+#SQL: CREATE DATABSE Food Delivery
+Tables: 
+1. Customer
+2. Restaurant
+3. Menu_Items
+4. Order
+5. Delivery
+
+#Python: Make application
+>> Data Cleaning and Formatting
+>> Statistical Analysis (EDA -- Exploratory Data Analysis)
+>> Inference Analysis (Testing, Prediction)
+>> Web-interface through Streamlit

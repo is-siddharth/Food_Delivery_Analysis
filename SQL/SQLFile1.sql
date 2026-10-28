@@ -1,0 +1,36 @@
+-- Food_Deliverey_Customer_Analysis
+-- Creating the Database
+CREATE DATABASE Food_Delivery;
+USE Food_Delivery;
+
+-- Customers
+CREATE TABLE IFNOT EXISTS Customer
+(
+C_ID INT IDENTITY(1,1) PRIMARY KEY, 
+C_Name VARCHAR(30) NOT NULL, 
+C_Gender CHAR(10) NOT NULL,
+C_Contact CHAR(10) NOT NULL UNIQUE,
+C_Address VARCHAR(100) NOT NULL,
+C_Sign_Up_Date DATETIME DEFAULT (CURRENT_TIMESTAMP)
+);
+
+CREATE TABLE IF NOT EXISTS Restaurent
+(
+Res_ID INT IDENTITY(1,1) PRIMARY KEY, 
+Res_Name VARCHAR(50) NOT NULL, 
+Res_Contact CHAR(10) NOT NULL UNIQUE, 
+Res_Address VARCHAR(100), 
+Res_Cuisine VARCHAR(60), 
+Res_Rating INT CHECK(Res_Rating >= 1 AND Res_Ratin <= 5)
+);
+
+
+CREATE TABLE IF NOT EXISTS Menu_Items
+(
+Item_ID INT IDENTITY(1,1) PRIMARY KEY, 
+Res_ID INT IDENTITY(1,1) PRIMARY KEY, 
+Food_Item VARCHAR(50) NOT NULL,
+Food_Price FLOAT DEFAULT 0, 
+Food_Availability BIT, 
+FOREIGN KEY(Res_ID) REFERENCES Restaurent(Res_ID)
+);
